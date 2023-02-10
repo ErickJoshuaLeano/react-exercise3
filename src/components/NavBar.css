@@ -1,0 +1,72 @@
+.center-buttons {
+  position: fixed;
+  left: 50vw;
+  margin-left: -234px;
+  top: 30px;
+}
+
+.navbar-button {
+  font-family: Poppins, Helvetica, sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+  border: none;
+  background: none;
+  letter-spacing: 1px;
+}
+
+.navbar-button:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  transition: 0.5s;
+}
+
+.pre-navbar {
+  background-color: #030f2a;
+  color: white;
+  font-size: 11px;
+  position: fixed;
+  width: 100vw;
+  top: -8px;
+  padding-top: 10px;
+  padding-bottom: 3px;
+  text-align: center;
+}
+
+.member-button {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  border: none;
+  background: none;
+  position: relative;
+  right: 30px;
+}
+
+.member-button:hover {
+  text-decoration: underline;
+  transition: 0.2s;
+}
+
+.pre-navbar-buttons {
+  position: relative;
+  height: 0px;
+  top: -17px;
+  text-align: right;
+}
+
+.container-fluid {
+  position: fixed;
+  top: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.navbar {
+  z-index: 100;
+}
+
+@media (max-width: 767px) {
+  .navbar-button {
+    display: none;
+  }
+}

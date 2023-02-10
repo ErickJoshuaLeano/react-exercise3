@@ -1,0 +1,106 @@
+.add_to_cart {
+  background-color: #e94a0a;
+  font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  z-index: 10;
+  position: absolute;
+  transition-duration: 0.4s;
+  transition-property: width;
+  overflow: clip;
+  white-space: nowrap;
+  text-overflow: clip;
+}
+
+.add_to_cart:hover {
+  background-color: #ad380a;
+  transition: 0.4s;
+}
+
+.item_box {
+  background-color: white;
+  box-shadow: 1px 1px 7px;
+  padding-bottom: 10px;
+  padding-top: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.item_name {
+  font-family: Poppins;
+}
+
+.item_price {
+  font-family: Poppins;
+  font-weight: 300;
+}
+
+.image_box {
+  height: 100px;
+  position: relative;
+  top: -60px;
+}
+
+.remove_item {
+  background-color: #959595;
+  font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  z-index: 9;
+  position: relative;
+  margin-left: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+.remove_item:hover {
+  background-color: #787878;
+  transition: 0.4s;
+}
+
+.reset_item {
+  background-color: rgb(193, 48, 48);
+  font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  float: right;
+  right: 10px;
+  top: 5px;
+  z-index: 9;
+}
+
+.reset_item:hover {
+  background-color: rgb(143, 36, 36);
+  transition: 0.4s;
+}
+
+.item_count {
+  background-color: black;
+  font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: white;
+  border: none;
+  position: relative;
+  top: -5px;
+  border-radius: 2px;
+  margin-left: 60px;
+  padding: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  z-index: 9;
+}
+
+.color_button {
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+}
