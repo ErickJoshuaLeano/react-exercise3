@@ -1,97 +1,109 @@
-import React, { Component } from "react";
+import { IconButton } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import EditIcon from "@mui/icons-material/Edit";
+import React from "react";
 import "./Counter.css";
+import { Link } from "react-router-dom";
 
-export default class Counter extends Component {
-  getName() {
-    return <h1>Big Name</h1>;
-  }
-
-  getClassName() {
-    if (this.props.counter.value > 0) {
+const Counter = ({
+  counter,
+  children,
+  onIncrement,
+  onDecrement,
+  onItemReset,
+  onDelete,
+}) => {
+  const getClassName = () => {
+    if (counter.value > 0) {
       return "badge bg-primary";
     }
     return "badge bg-warning text-dark";
-  }
+  };
 
-  formatText() {
-    return this.props.counter.value;
-    // if (this.props.counter.value > 0) {
-    //   return this.props.counter.value;
-    // }
-    // return "Zero";
-  }
+  const formatText = () => {
+    return counter.value;
+  };
 
-  componentWillUnmount() {
-    console.log("unmounting...");
-  }
-
-  render() {
-    const { counter, children } = this.props;
-    console.log(this.props);
-    return (
-      <>
-        <div /*className="m-4"*/>
-          <div className="image_box">
-            {
-              <img
-                src={this.props.counter.image}
-                style={{ height: "250px" }}
-              ></img>
-            }
+  return (
+    <>
+      <div className="element">
+        <div className="image-box">
+          <Link to={`/products/${counter.id}`}>
+            {<img src={counter.image} style={{ height: "250px" }}></img>}
+          </Link>
+        </div>
+        <div className="item-box">
+          <button
+            style={{ backgroundColor: counter.color1 }}
+            className="color-button"
+          ></button>
+          <button
+            style={{ backgroundColor: counter.color2 }}
+            className="color-button"
+          ></button>
+          <button
+            style={{ backgroundColor: counter.color3 }}
+            className="color-button"
+          ></button>
+          <div className="item-name">
+            <Link
+              to={`/products/${counter.id}`}
+              style={{ color: "inherit", textDecoration: "inherit" }}
+            >
+              {counter.name}
+            </Link>
           </div>
-          <div className="item_box">
-            <button
-              style={{ backgroundColor: this.props.counter.color1 }}
-              className="color_button"
-            ></button>
-            <button
-              style={{ backgroundColor: this.props.counter.color2 }}
-              className="color_button"
-            ></button>
-            <button
-              style={{ backgroundColor: this.props.counter.color3 }}
-              className="color_button"
-            ></button>
-            <div className="item_name">{this.props.counter.name}</div>
-            <div className="item_price">P {this.props.counter.price}.00</div>
-            {children}
+          <div className="item-price">P {counter.price}.00</div>
+          {children}
 
-            <button
-              onClick={() => {
-                this.props.onIncrement(counter.id);
-              }}
-              style={{
-                height: this.props.counter.buttonHeight,
-                width: this.props.counter.buttonWidth,
-              }}
-              className="add_to_cart"
-            >
-              {this.props.counter.text}
-            </button>
-            {/* <span className={this.getClassName()}>{this.formatText()}</span> */}
-            <span className="item_count"> {this.formatText()} </span>
-            <button
-              onClick={() => this.props.onDecrement(counter.id)}
-              className="remove_item"
-              disabled={counter.value === 0}
-            >
-              -
-            </button>
-            {/* <button
-              onClick={() => this.props.onDelete(counter.id)}
-              className="btn btn-danger ms-1"
-            >
-              Delete
-            </button> */}
-            <button
-              onClick={() => this.props.onItemReset(counter.id)}
-              className="reset_item"
-            >
-              Remove
-            </button>
+          <button
+            onClick={() => {
+              onIncrement(counter.id);
+            }}
+            style={{
+              height: counter.buttonHeight,
+              width: counter.buttonWidth,
+            }}
+            className="add-to-cart"
+          >
+            {counter.text}
+          </button>
+          {}
+          <span className="item-count"> {formatText()} </span>
+          <button
+            onClick={() => onDecrement(counter.id)}
+            className="remove-item"
+            disabled={counter.value === 0}
+          >
+            -
+          </button>
+          {}
+          <button
+            onClick={() => onItemReset(counter.id)}
+            className="reset-item"
+          >
+            Remove
+          </button>
+          <div className="action-buttons">
+            <Link to={`/products/${counter.id}`}>
+              <IconButton>
+                <ArrowForwardIcon />
+              </IconButton>
+            </Link>
+            <Link to={`/products/${counter.id}/edit`}>
+              <IconButton>
+                <EditIcon />
+              </IconButton>
+            </Link>
+            <IconButton onClick={() => onDelete(counter.id)}>
+              <DeleteIcon />
+            </IconButton>
           </div>
         </div>
-      </>
-    );
-  }
-}
+      </div>
+    </>
+  );
+};
+
+export default Counter;

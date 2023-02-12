@@ -1,4 +1,4 @@
-.add_to_cart {
+.add-to-cart {
   background-color: #e94a0a;
   font-family: Bebas Neue, Arial, Helvetica, sans-serif;
   font-size: 35px;
@@ -14,12 +14,12 @@
   text-overflow: clip;
 }
 
-.add_to_cart:hover {
+.add-to-cart:hover {
   background-color: #ad380a;
   transition: 0.4s;
 }
 
-.item_box {
+.item-box {
   background-color: white;
   box-shadow: 1px 1px 7px;
   padding-bottom: 10px;
@@ -28,22 +28,22 @@
   padding-right: 10px;
 }
 
-.item_name {
+.item-name {
   font-family: Poppins;
 }
 
-.item_price {
+.item-price {
   font-family: Poppins;
   font-weight: 300;
 }
 
-.image_box {
+.image-box {
   height: 100px;
   position: relative;
   top: -60px;
 }
 
-.remove_item {
+.remove-item {
   background-color: #959595;
   font-family: Bebas Neue, Arial, Helvetica, sans-serif;
   font-size: 35px;
@@ -57,12 +57,12 @@
   width: 50px;
 }
 
-.remove_item:hover {
+.remove-item:hover {
   background-color: #787878;
   transition: 0.4s;
 }
 
-.reset_item {
+.reset-item {
   background-color: rgb(193, 48, 48);
   font-family: Bebas Neue, Arial, Helvetica, sans-serif;
   font-size: 25px;
@@ -76,12 +76,12 @@
   z-index: 9;
 }
 
-.reset_item:hover {
+.reset-item:hover {
   background-color: rgb(143, 36, 36);
   transition: 0.4s;
 }
 
-.item_count {
+.item-count {
   background-color: black;
   font-family: Bebas Neue, Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -97,10 +97,20 @@
   z-index: 9;
 }
 
-.color_button {
+.color-button {
   height: 20px;
   width: 20px;
   margin: 5px;
   border: none;
   border-radius: 10px;
+}
+
+.element {
+  width: 251px;
+}
+
+.action-buttons {
+  margin-top: 5px;
+  text-align: center;
+  z-index: 100;
 }

@@ -1,0 +1,6 @@
+.product-card {
+  position: relative;
+  top: 13vh;
+  left: 25%;
+  z-index: 89;
+}

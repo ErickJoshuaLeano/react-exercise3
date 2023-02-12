@@ -1,32 +1,44 @@
-import React, { Component } from "react";
+import { Button } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import React from "react";
 import Counter from "./Counter";
+import "./Counters.css";
+import { Link } from "react-router-dom";
 
-export default class Counters extends Component {
-  render() {
-    const {
-      onIncrement,
-      onDecrement,
-      onDelete,
-      counters,
-      onReset,
-      onItemReset,
-    } = this.props;
-    return (
+const Counters = ({
+  onIncrement,
+  onDecrement,
+  onDelete,
+  counters,
+  onReset,
+  onItemReset,
+}) => {
+  return (
+    <div className="image-grid">
+      {counters.map((counter) => (
+        <Counter
+          onDelete={onDelete}
+          counter={counter}
+          key={counter.id}
+          onIncrement={onIncrement}
+          onDecrement={onDecrement}
+          onItemReset={onItemReset}
+        />
+      ))}
       <div>
-        {/* <button onClick={onReset} className="btn btn-primary ms-4 mt-2">
-          Reset
-        </button> */}
-        {counters.map((counter) => (
-          <Counter
-            onDelete={onDelete}
-            counter={counter}
-            key={counter.id}
-            onIncrement={onIncrement}
-            onDecrement={onDecrement}
-            onItemReset={onItemReset}
-          />
-        ))}
+        <Button
+          className="add-product"
+          variant="contained"
+          size="large"
+          startIcon={<AddIcon />}
+          LinkComponent={Link}
+          to="/products/new"
+        >
+          Add Product
+        </Button>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default Counters;
